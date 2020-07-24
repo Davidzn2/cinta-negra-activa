@@ -18,6 +18,10 @@ const equiposSchema = new mongoose.Schema({
   liga: String,
   titulos: Number,
   clasifico: Boolean,
+  products: [{
+    type: mongoose.Schema.Types.ObjectId,
+
+  }],
 });
 // MODELO, -> OBJETO QUE ME DEJA INTERACTUAR CON LA COLECCION DE MONGO DB
 const Equipos = mongoose.model("Equipos", equiposSchema);
