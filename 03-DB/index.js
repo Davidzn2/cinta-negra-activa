@@ -7,8 +7,7 @@ const { config } = require("./config");
 const app = express();
 
 // CONEXIÓNN A LA BASE DE DATOS
-mongoose
-  .connect(config.db.url, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(config.db.url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Conectado!!!"))
   .catch((err) => console.log("Hubo un error de conexión error: ", err));
 
@@ -18,10 +17,6 @@ const equiposSchema = new mongoose.Schema({
   liga: String,
   titulos: Number,
   clasifico: Boolean,
-  products: [{
-    type: mongoose.Schema.Types.ObjectId,
-
-  }],
 });
 // MODELO, -> OBJETO QUE ME DEJA INTERACTUAR CON LA COLECCION DE MONGO DB
 const Equipos = mongoose.model("Equipos", equiposSchema);
